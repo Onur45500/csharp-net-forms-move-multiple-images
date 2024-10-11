@@ -55,7 +55,21 @@ namespace csharp_net_forms_move_multiple_images
 
         private void FormMouseDown(object sender, MouseEventArgs e)
         {
+            Point mousePosition = new Point(e.X, e.Y);
 
+            foreach(Image newImage in images)
+            {
+                if(SelectedImage == null)
+                {
+                    if(newImage.rect.Contains(mousePosition))
+                    {
+                        SelectedImage = newImage;
+                        newImage.active = true;
+                        indexValue = images.IndexOf(newImage);
+                        label1.Text = "Card " + (indexValue + 1) + " of " + totalImages;
+                    }
+                }
+            }
         }
 
         private void FormPaint(object sender, PaintEventArgs e)
