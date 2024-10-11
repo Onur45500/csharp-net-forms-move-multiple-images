@@ -48,6 +48,7 @@
             // 
             FormTimer.Enabled = true;
             FormTimer.Interval = 20;
+            FormTimer.Tick += this.FormTimer;
             // 
             // Form1
             // 
@@ -59,6 +60,10 @@
             DoubleBuffered = true;
             Name = "Form1";
             Text = "Moving multiple images";
+            Paint += FormPaint;
+            MouseDown += FormMouseDown;
+            MouseMove += FormeMouseMove;
+            MouseUp += FormMouseUp;
             ResumeLayout(false);
         }
 

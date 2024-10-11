@@ -7,5 +7,29 @@ namespace csharp_net_forms_move_multiple_images
             InitializeComponent();
         }
 
+        private void FormMouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void FormeMouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void FormMouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void FormPaint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormTimer(object sender, EventArgs e)
+        {
+
+        }
     }
 }
