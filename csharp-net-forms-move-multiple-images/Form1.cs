@@ -50,7 +50,11 @@ namespace csharp_net_forms_move_multiple_images
 
         private void FormeMouseMove(object sender, MouseEventArgs e)
         {
-
+            if(SelectedImage != null)
+            {
+                SelectedImage.position.X = e.X - (SelectedImage.width / 2);
+                SelectedImage.position.Y = e.Y - (SelectedImage.width / 2);
+            }
         }
 
         private void FormMouseDown(object sender, MouseEventArgs e)
