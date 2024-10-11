@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace csharp_net_forms_move_multiple_images
 {
-    public class Card
+    public class Image
     {
-        public Image cardPic;
+        public System.Drawing.Image cardPic;
         public int width;
         public int height;
         public Point position = new Point();
         public bool active = false;
         public Rectangle rect;
 
-        public Card(string imageLocation)
+        public Image(string imageLocation)
         {
-            cardPic = Image.FromFile(imageLocation);
+            cardPic = System.Drawing.Image.FromFile(imageLocation);
             width = cardPic.Width;
             height = cardPic.Height;
             rect = new Rectangle(position.X, position.Y, width, height);

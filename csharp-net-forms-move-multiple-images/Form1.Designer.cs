@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             label1 = new Label();
-            FormTimer = new System.Windows.Forms.Timer(components);
+            ImageTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -44,11 +44,11 @@
             label1.Text = "Image 1 of 10";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // FormTimer
+            // ImageTimer
             // 
-            FormTimer.Enabled = true;
-            FormTimer.Interval = 20;
-            FormTimer.Tick += this.FormTimer;
+            ImageTimer.Enabled = true;
+            ImageTimer.Interval = 20;
+            ImageTimer.Tick += ImageTimerEvent;
             // 
             // Form1
             // 
@@ -70,6 +70,6 @@
         #endregion
 
         private Label label1;
-        private System.Windows.Forms.Timer FormTimer;
+        private System.Windows.Forms.Timer ImageTimer;
     }
 }
