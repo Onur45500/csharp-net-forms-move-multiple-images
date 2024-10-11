@@ -33,7 +33,14 @@ namespace csharp_net_forms_move_multiple_images
 
         private void MakeImages()
         {
-
+            imageNumber++;
+            xPos += 55;
+            Image newImage = new Image(imageLocation[imageNumber]);
+            newImage.position.X = xPos;
+            newImage.position.Y = 300;
+            newImage.rect.X = newImage.position.X;
+            newImage.rect.Y = newImage.position.Y;
+            images.Add(newImage);
         }
 
         private void FormMouseUp(object sender, MouseEventArgs e)
