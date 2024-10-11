@@ -45,7 +45,12 @@ namespace csharp_net_forms_move_multiple_images
 
         private void FormMouseUp(object sender, MouseEventArgs e)
         {
-
+            foreach(Image tempImage in images)
+            {
+                tempImage.active = false;
+            }
+            SelectedImage = null;
+            lineAnimation = 0;
         }
 
         private void FormeMouseMove(object sender, MouseEventArgs e)
