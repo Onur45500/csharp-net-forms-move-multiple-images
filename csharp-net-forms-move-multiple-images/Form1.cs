@@ -88,7 +88,19 @@ namespace csharp_net_forms_move_multiple_images
 
         private void ImageTimerEvent(object sender, EventArgs e)
         {
+            foreach(Image image in images)
+            {
+                image.rect.X = image.position.X;
+                image.rect.Y = image.position.Y;
+            }
 
+            if(SelectedImage != null)
+            {
+                if(lineAnimation < 10)
+                {
+                    lineAnimation++;
+                }
+            }
         }
     }
 }
