@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
+            FormTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -41,7 +43,11 @@
             label1.TabIndex = 0;
             label1.Text = "Image 1 of 10";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
+            // 
+            // FormTimer
+            // 
+            FormTimer.Enabled = true;
+            FormTimer.Interval = 20;
             // 
             // Form1
             // 
@@ -59,5 +65,6 @@
         #endregion
 
         private Label label1;
+        private System.Windows.Forms.Timer FormTimer;
     }
 }
