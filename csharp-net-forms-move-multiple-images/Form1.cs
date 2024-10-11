@@ -15,14 +15,23 @@ namespace csharp_net_forms_move_multiple_images
         public Form1()
         {
             InitializeComponent();
+            SetUpApp();
         }
 
         private void SetUpApp()
         {
+            imageLocation = Directory.GetFiles("image", "*.png").ToList();
+            totalImages = imageLocation.Count();
 
+            for(int i = 0; i < totalImages; i++)
+            {
+                MakeImages();
+            }
+
+            label1.Text = "Card " + (imageNumber + 1) + " of " + totalImages;
         }
 
-        private void MakeCards()
+        private void MakeImages()
         {
 
         }
