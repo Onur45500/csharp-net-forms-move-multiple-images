@@ -91,6 +91,28 @@ namespace csharp_net_forms_move_multiple_images
                     image.position.Y,
                     image.width,
                     image.height);
+
+                Pen outline;
+
+                if(image.active)
+                {
+                    outline = new Pen(Color.Red, lineAnimation);
+                }
+                else
+                {
+                    outline = new Pen(Color.Transparent, 1);
+                }
+
+                e.Graphics.DrawRectangle(outline, image.rect);
+            }
+
+            if(SelectedImage != null)
+            {
+                e.Graphics.DrawImage(SelectedImage.imagePic,
+                    SelectedImage.position.X,
+                    SelectedImage.position.Y,
+                    SelectedImage.width,
+                    SelectedImage.height);
             }
         }
 
@@ -109,6 +131,8 @@ namespace csharp_net_forms_move_multiple_images
                     lineAnimation++;
                 }
             }
+
+            this.Invalidate();
         }
     }
 }
