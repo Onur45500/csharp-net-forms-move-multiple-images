@@ -6,5 +6,10 @@ namespace csharp_net_forms_move_multiple_images
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
