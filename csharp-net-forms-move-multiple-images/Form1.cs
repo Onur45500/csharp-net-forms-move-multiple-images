@@ -20,7 +20,8 @@ namespace csharp_net_forms_move_multiple_images
 
         private void SetUpApp()
         {
-            imageLocation = Directory.GetFiles("image", "*.png").ToList();
+            string directoryPath = "Images";
+            imageLocation = Directory.GetFiles(directoryPath, "*.png").ToList();
             totalImages = imageLocation.Count();
 
             for(int i = 0; i < totalImages; i++)
@@ -28,13 +29,13 @@ namespace csharp_net_forms_move_multiple_images
                 MakeImages();
             }
 
-            label1.Text = "Card " + (imageNumber + 1) + " of " + totalImages;
+            label1.Text = "Image " + (imageNumber + 1) + " of " + totalImages;
         }
 
         private void MakeImages()
         {
             imageNumber++;
-            xPos += 55;
+            xPos += 105;
             Image newImage = new Image(imageLocation[imageNumber]);
             newImage.position.X = xPos;
             newImage.position.Y = 300;
@@ -75,7 +76,7 @@ namespace csharp_net_forms_move_multiple_images
                         SelectedImage = newImage;
                         newImage.active = true;
                         indexValue = images.IndexOf(newImage);
-                        label1.Text = "Card " + (indexValue + 1) + " of " + totalImages;
+                        label1.Text = "Image " + (indexValue + 1) + " of " + totalImages;
                     }
                 }
             }
@@ -83,7 +84,14 @@ namespace csharp_net_forms_move_multiple_images
 
         private void FormPaint(object sender, PaintEventArgs e)
         {
-
+            foreach(Image image in images)
+            {
+                e.Graphics.DrawImage(image.imagePic,
+                    image.position.X,
+                    image.position.Y,
+                    image.width,
+                    image.height);
+            }
         }
 
         private void ImageTimerEvent(object sender, EventArgs e)
